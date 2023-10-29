@@ -1,0 +1,10 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+div {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 0;
+}

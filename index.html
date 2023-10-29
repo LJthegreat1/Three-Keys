@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+  <style>
+body {
+    background-image: ('./House.jpg');
+  }
+  </style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link hre<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      background-image: url("./House.png");
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Three Keys</h1>
+  
+  <script>
+    function checkAnswer() {
+      var input = document.getElementById("answer").value;
+      if (input.toLowerCase() === "haunted house") {
+        document.body.style.backgroundImage = "url('./inside.png')";
+        document.getElementById("result").textContent = "Congratulations! You found the haunted house!";
+        document.getElementById("inventory").textContent = "You received a bolt cutter.";
+      } else {
+        document.body.style.backgroundImage = "url('./Face.png')";
+        document.getElementById("result").textContent = "Wrong answer. Please try again.";
+        setTimeout(function() {
+          document.body.style.backgroundImage = "url('./black.png')";
+          document.getElementById("result").textContent = "";
+        }, 2000);
+      }
+    }
+  </script>
+  
+  <label for="answer">Name a horror place:</label>
+  <input type="text" id="answer" name="answer" required>
+  <button onclick="checkAnswer()">Press Enter to confirm</button>
+  
+  <p id="result"></p>
+  <p id="inventory"></p>
+</body>
+
+</html>
+</head>
+<body>
+  <h1> Three Keys </h1>
+<style>
+  body {
+    background-image: url("./House.png");
+  }
+</style>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Value Guessing Game</title>
+  <style>
+    body {
+      background-image: url("./House.png");
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Value Guessing Game</h1>
+
+  <script>
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function checkGuess() {
+      var input = document.getElementById("guess").value;
+      var randomNumber = getRandomInt(1, 9);
+
+      if (input == randomNumber) {
+        document.body.style.backgroundImage = "url('./end.png')";
+        document.getElementById("result").textContent = "Congratulations! You guessed the right number and received a keycard!";
+      } else {
+        if (randomNumber == 5) {
+          var chance = Math.random();
+          if (chance < 0.5) {
+            document.body.style.backgroundImage = "url('./inside.png')";
+          } else {
+            document.body.style.backgroundImage = "url('./Face.png')";
+            setTimeout(function() {
+              location.reload();
+            }, 2000);
+            return;
+          }
+        } else {
+          document.body.style.backgroundImage = "url('./Face.png')";
+          setTimeout(function() {
+            location.reload();
+          }, 2000);
+          return;
+        }
+      }
+    }
+  </script>
+
+  <label for="guess">Guess a number from 1 to 9:</label>
+  <input type="number" id="guess" name="guess" min="1" max="9" required>
+  <button onclick="checkGuess()">Check</button>
+
+  <p id="result"></p>
+</body>
+
+</html>
+<h2 id="endText">The End</h2>
+
+<script>
+  var backgroundImage = document.body.style.backgroundImage;
+  if (backgroundImage.includes('end.png')) {
+    document.getElementById("endText").style.display = "block";
+  }
+</script>
+</html>
